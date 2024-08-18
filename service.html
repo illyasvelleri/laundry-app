@@ -103,7 +103,16 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const backToHomeBtn = document.getElementById('back-to-home');
 
+            backToHomeBtn.addEventListener('click', function () {
+                window.location.href = 'index.html'; // Redirect to service.html page
+            });
+        });
+
+    </script>
 
     <script src="script.js"></script>
     <!-- Bootstrap JS and dependencies -->

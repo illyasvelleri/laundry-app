@@ -33,9 +33,9 @@
     /* Base font size for body */
     --font-size-h1: 2.8rem;
     /* Headline 1 */
-    --font-size-h2: 1.5rem;
+    --font-size-h2: 1.6rem;
     /* Headline 2 */
-    --font-size-h3: 18px;
+    --font-size-h3: 1.3rem;
     /* Headline 3 */
     --font-size-h4: 16px;
     /* Headline 4 */
@@ -119,6 +119,7 @@ nav .container .navbar-toggler {
     right: 10px;
 }
 
+
 nav .container .navbar-toggler span i {
     font-size: 28px;
     color: var(--secondary-color);
@@ -126,10 +127,9 @@ nav .container .navbar-toggler span i {
 
 .nav-items {
     display: none;
-    /* Hide by default */
     padding: 0;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 55px;
+    padding-bottom: 55px;
     list-style: none;
     position: absolute;
     background: var(--white-color);
@@ -145,13 +145,20 @@ nav .container .navbar-toggler span i {
 
 .nav-items.show {
     display: block;
-    /* Show when toggled */
     align-items: center;
     justify-content: center;
 }
 
 .nav-items .nav-item {
     padding: 10px;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.d-block {
+    display: block !important;
 }
 
 .nav-items .nav-item:hover {
@@ -394,8 +401,8 @@ nav .container .navbar-toggler span i {
     padding: 60px 20px;
 }
 
-.trust h2 {
-    color: var(--primary-color);
+.trust h3 {
+    color: var(--secondary-color);
     font-weight: 500;
     font-size: var(--font-size-h2);
 }
@@ -425,7 +432,13 @@ nav .container .navbar-toggler span i {
     margin-top: 10px;
     color: var(--secondary-color);
 }
-
+.services{
+    margin-bottom: 90px;
+}
+.services h2{
+    font-size: var(--font-size-h2);
+    color: var(--text-color);
+}
 .services .container .scrolling-wrapper {
     display: flex;
     overflow-x: auto;
@@ -461,11 +474,12 @@ nav .container .navbar-toggler span i {
 .services .container .card h5 {
     font-size: 18px;
     margin-bottom: 10px;
+    color:#6c757d;
 }
 
 .services .container .card p {
     font-size: 14px;
-    color: #666;
+    color: var(--text-color);
 }
 
 .services .container #view-all,
@@ -492,14 +506,14 @@ nav .container .navbar-toggler span i {
     align-items: center;
     justify-content: space-around;
     background: var(--secondary-color);
-    padding: 40px 0px;
-    margin-bottom: 90px;
+    padding: 40px 10px;
 
 }
 
-.container .contact h1 {
+.container .contact h3 {
     margin-right: 20px;
     color: var(--white-color);
+    font-size: var(--font-size-h3);
 }
 
 @media (max-width: 768px) {
@@ -530,6 +544,9 @@ nav .container .navbar-toggler span i {
 
 }
 
+.stepsList-heading h3{
+    font-size: var(--font-size-h3);
+}
 #stepsList {
     display: flex;
     flex-direction: column;
@@ -618,7 +635,7 @@ p {
 }
 
 .about-us .container .heading h2 {
-    color: #6c757d;
+    color: var(--text-color);
     font-size: var(--font-size-h2);
     margin-top: 50px;
 }
@@ -644,6 +661,7 @@ p {
     font-size: var(--font-size-p);
     line-height: 1.5;
     margin-top: 10px;
+    border-radius: 5px;
 }
 
 .about-us .content .btn {
@@ -712,7 +730,7 @@ p {
 
 .testimonial-container {
     margin-top: 120px;
-    margin-bottom: 90px;
+    margin-bottom: 120px;
 }
 
 #testimonialCarousel .testimonial-card {
@@ -799,7 +817,9 @@ p {
     font-size: var(--font-size-h2);
     margin-bottom: 1rem;
 }
-
+.contact-form-container h3{
+    font-size: var(--font-size-h3);
+}
 #contactForm {
     margin: 10px 40px;
 }
@@ -860,8 +880,8 @@ footer .container .row {
     text-align: center;
 }
 
-footer .container .row h2 {
-    font-size: var(--font-size-h2);
+footer .container .row h3 {
+    font-size: var(--font-size-h3);
     font-weight: bold;
 }
 

@@ -28,14 +28,16 @@
             <button class="booking-btn">Book Now</button>
 
             <button class="navbar-toggler">
-                <span><i class="bi bi-list"></i></span>
+                <span class="open-icon"><i class="bi bi-list"></i></span>
+                <span class="close-icon d-none"><i class="bi bi-x-lg"></i></span>
             </button>
+
             <ul class="nav-items ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Commercial</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about-us">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
 
         </div>
@@ -126,7 +128,7 @@
     </div>
     <section>
         <div class="trust text-center py-5">
-            <h2 class="mb-3">Trusted by 2000+ Customers</h2>
+            <h3 class="mb-3">Trusted by 2000+ Customers</h3>
             <p class="">In categories like Home, Commercial, and Hospitality</p>
             <div class="categories-icons d-flex justify-content-center mt-4">
                 <div class="category mx-3">
@@ -146,7 +148,7 @@
 
     </section>
 
-    <section class="services py-5 mb-5">
+    <section class="services py-5" id="services">
         <div class="container">
             <h2 class="text-center mb-4">Our Services</h2>
             <div class="scrolling-wrapper">
@@ -201,18 +203,20 @@
             <button id="view-all" class="ms-3">View All</button>
         </div>
     </section>
-    <section class="">
+    <section style="margin-bottom: 90px;">
         <div class="container">
             <div class="contact">
-                <h3>Call us for service</h3> <a href="#"><i class="fa-solid fa-phone"></i> Learn More</a>
+                <h3>Call us for service</h3>
+                <a href="tel:+971559900160"><i class="fa-solid fa-phone"></i> Learn More</a>
             </div>
         </div>
     </section>
 
 
-    <section>
-        <div class="container mb-5">
-            <h4 class="text-center mt-5 mb-5">Experience the Ultimate in Hassle-Free & Quick Laundry Care</h4>
+    <section style="margin-top: 140px;">
+        <div class="container stepsList-heading">
+            <h3 class="text-center text-secondary" style="margin-bottom: 60px;">Experience the Ultimate in Hassle-Free &
+                Quick Laundry Care</h3>
             <div class="stepsList-container">
                 <ul id="stepsList">
 
@@ -245,7 +249,7 @@
         </div>
     </section>
     <section>
-        <div class="about-us mb-5">
+        <div class="about-us" style="margin-top: 120px;" id="about-us">
             <div class="container">
                 <div class="heading">
                     <h2>About us</h2>
@@ -258,7 +262,8 @@
                             efficient laundry solutions tailored to meet the needs of our community. Starting as a
                             small initiative, we have grown into a trusted name in [Location/Region], recognized for
                             our commitment to quality and customer satisfaction.</p>
-                        <a href="#" class="btn" type="button">Join Us Today</a>
+                        <a href="https://wa.me/971559900160?text=I'm%20interested%20in%20joining%20your%20service!"
+                            class="btn" type="button">Join Us Today</a>
                     </div>
                     <div class="image">
                         <img src="img/hero img 3.jpg" alt="">
@@ -269,7 +274,7 @@
     </section>
 
 
-    <div class="container testimonial-container mb-5">
+    <div class="container testimonial-container">
         <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -297,15 +302,16 @@
         </div>
     </div>
 
-    <section>
-        <div class="container contact-form-container mb-5">
+    <section style="margin-top: 140px;">
+        <div class="container contact-form-container">
             <h2 class="text-center">Contact Us</h2>
-            <p class="text-center text-secondary">We're excited to connect with you! Whether you have inquiries about
+            <p class="text-center text-secondary mb-5">We're excited to connect with you! Whether you have inquiries
+                about
                 our laundry services, need assistance with a booking, or simply want to reach out, our team is ready to
                 help. Contact us using the information below:</p>
             <div class="row">
-                <div class="col-md-6 contact-form">
-                    <h2 class="text-secondary mb-4">Need Support?</h2>
+                <div class="col-md-6 contact-form" id="contact">
+                    <h3 class="text-secondary mb-5 ms-4">Need Support?</h3>
                     <form id="contactForm">
                         <!-- <p>We're here to help! Contact us for a quote or assistance in joining our team.</p> -->
                         <label for="name">Full Name:</label><br>
@@ -323,7 +329,7 @@
                         <button type="submit">Submit</button>
                     </form>
                 </div>
-                <div class="col-md-6 location">
+                <div class="col-md-6 location" id="location">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31277.95492016229!2d76.00137963755424!3d11.498355726628983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba66c4c7455ba79%3A0xe22fc2e2882e0689!2sThamarassery%20Churam!5e0!3m2!1sen!2sin!4v1723915843623!5m2!1sen!2sin"
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
@@ -336,26 +342,26 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container mb-5">
+        <div class="container" style="margin-top: 120px;">
             <div class="row">
                 <div class="col-md-4">
-                    <h2>Location</h2>
+                    <h3>Location</h3>
                     <p>Kallai Road,
                         Railway Station:200mts,
                         Calicut Airport: 28kms</p>
                 </div>
                 <div class="col-md-4">
-                    <h2>Email</h2>
+                    <h3>Email</h3>
                     <p>Email:sample@gmail.com</p>
                 </div>
                 <div class="col-md-4">
-                    <h2>WhatsApp</h2>
+                    <h3>WhatsApp</h3>
                     <p>+971 123 4567 890</p>
                     <p>+971 123 4567 890</p>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom text-center py-3">
+        <div class="footer-bottom text-center py-3" style="margin-top: 60px;">
             <p>&copy; 2024 Fast Laundry. All Rights Reserved.</p>
         </div>
     </footer>

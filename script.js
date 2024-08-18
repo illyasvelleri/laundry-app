@@ -1,19 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
     const toggler = document.querySelector('.navbar-toggler');
     const navItems = document.querySelector('.nav-items');
+    const openIcon = document.querySelector('.open-icon');
+    const closeIcon = document.querySelector('.close-icon');
 
-    // Toggle the menu
+    // Toggle the menu and icons
     toggler.addEventListener('click', () => {
         navItems.classList.toggle('show');
+        openIcon.classList.toggle('d-none');
+        closeIcon.classList.toggle('d-none');
     });
 
-    // Close menu when clicking outside
+    // Close menu and reset icons when clicking outside
     document.addEventListener('click', (e) => {
         if (!toggler.contains(e.target) && !navItems.contains(e.target)) {
             navItems.classList.remove('show');
+            openIcon.classList.remove('d-none');
+            closeIcon.classList.add('d-none');
         }
     });
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const steps = document.querySelectorAll('#stepsList li');
@@ -148,14 +155,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const viewAllButton = document.getElementById('view-all');
-
-    viewAllButton.addEventListener('click', function () {
-        window.location.href = 'service.html'; // Redirect to service.html page
-    });
-});
-
 
 //contact form submition
 
@@ -177,6 +176,18 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     // Redirect to WhatsApp
     window.open(whatsappURL, '_blank');
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const viewAllButton = document.getElementById('view-all');
+
+    viewAllButton.addEventListener('click', function () {
+        window.location.href = 'service.html'; // Redirect to service.html page
+    });
+});
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const backToHomeBtn = document.getElementById('back-to-home');
