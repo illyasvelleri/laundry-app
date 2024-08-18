@@ -1,3 +1,25 @@
+// document.addEventListener('DOMContentLoaded', () => {
+//     const toggler = document.querySelector('.navbar-toggler');
+//     const navItems = document.querySelector('.nav-items');
+//     const openIcon = document.querySelector('.open-icon');
+//     const closeIcon = document.querySelector('.close-icon');
+
+//     // Toggle the menu and icons
+//     toggler.addEventListener('click', () => {
+//         navItems.classList.toggle('show');
+//         openIcon.classList.toggle('d-none');
+//         closeIcon.classList.toggle('d-none');
+//     });
+
+//     // Close menu and reset icons when clicking outside
+//     document.addEventListener('click', (e) => {
+//         if (!toggler.contains(e.target) && !navItems.contains(e.target)) {
+//             navItems.classList.remove('show');
+//             openIcon.classList.remove('d-none');
+//             closeIcon.classList.add('d-none');
+//         }
+//     });
+// });
 document.addEventListener('DOMContentLoaded', () => {
     const toggler = document.querySelector('.navbar-toggler');
     const navItems = document.querySelector('.nav-items');
@@ -5,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeIcon = document.querySelector('.close-icon');
 
     // Toggle the menu and icons
-    toggler.addEventListener('click', () => {
+    toggler.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent the document click event from triggering
         navItems.classList.toggle('show');
         openIcon.classList.toggle('d-none');
         closeIcon.classList.toggle('d-none');
@@ -13,13 +36,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close menu and reset icons when clicking outside
     document.addEventListener('click', (e) => {
-        if (!toggler.contains(e.target) && !navItems.contains(e.target)) {
+        if (!navItems.contains(e.target)) {
             navItems.classList.remove('show');
             openIcon.classList.remove('d-none');
             closeIcon.classList.add('d-none');
         }
     });
+
+    // Close menu and reset icons when clicking on a nav item
+    navItems.addEventListener('click', () => {
+        navItems.classList.remove('show');
+        openIcon.classList.remove('d-none');
+        closeIcon.classList.add('d-none');
+    });
 });
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
