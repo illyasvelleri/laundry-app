@@ -203,17 +203,7 @@ nav .container .navbar-toggler span i {
     position: relative;
     z-index: 2;
 }
-.hero  p {
-    line-height: 35px;
-}
-.hero  p span{
-    background-color: var(--lighter-secondary-color);
-    color: var(--text-color);
-    font-size: 15px;
-    padding: 5px 10px;
-    margin-right: 8px;
-    border-radius: 5px;
-}
+
 /* Medium screens (tablets) */
 @media (max-width: 992px) {
     .hero h1 {
