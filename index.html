@@ -4,22 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Fast Laundry offers reliable and fast laundry solutions in the UAE. Schedule a pickup, enjoy our services, and experience hassle-free laundry care.">
     <title>Laundry Business Website</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-
-    <!----icons-->
+    <link rel="stylesheet" href="animation.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
 </head>
 
 <body>
 
-    <nav class="shadow">
+    <nav class="shadow" >
         <div class="container">
             <div class="logo">
                 <a href="#"><i class="bi bi-balloon-heart-fill"></i></a>
@@ -34,10 +35,10 @@
 
             <ul class="nav-items ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
-                <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about-us">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
             </ul>
 
         </div>
@@ -45,48 +46,25 @@
 
 
     <!-- Hero Section -->
-    <div class="hero mb-5">
+    <div class="hero" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500" data-aos-offset="100">
         <div class="container text-start">
-            <h1 class="display-3 mb-3">
+            <h1 class="display-3 mb-3 animated" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+                data-aos-offset="100">
                 Fast <span style="color: #4ABDAC;">&</span> reliable laundry
                 <span class="d-block">solutions in UAE.</span>
             </h1>
 
-            <p>We Collect, Clean and Deliver Directly to Your Door</p>
+            <p data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500" data-aos-offset="100">We Collect, Clean
+                and Deliver Directly to Your Door</p>
 
 
-            <button class="pickup-btn" id="openModal">
+            <button class="pickup-btn" id="openModal" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+                data-aos-offset="100">
                 Schedule a Pickup <i class="bi bi-arrow-right-circle-fill"></i>
             </button>
-            <!-- Modal -->
-            <div class="modal" id="pickupModal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5>Select Your Location</h5>
-                        <button class="close-btn" id="closeModal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <ul class="list-group">
-                            <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> <a href="#"
-                                    data-number="971559900160">AL WARQA</a></li>
-                            <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> <a href="#"
-                                    data-number="971559900160">MIRDIFF</a></li>
-                            <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> <a href="#"
-                                    data-number="971559900160">NAD AL HAMMAR</a></li>
-                            <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> <a href="#"
-                                    data-number="971559900160">ARJAN</a></li>
-                            <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> <a href="#"
-                                    data-number="971559900160">ALQUSAIS</a></li>
-                            <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> <a href="#"
-                                    data-number="971559900160">SHARJAH IND 6</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
-
-
-            <div class="row location-container">
+            <div class="row location-container" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+                data-aos-offset="100">
                 <div class="col-md-6">
                     <div class="scrolling-wrapper">
                         <div class="card">
@@ -126,84 +104,167 @@
             </div>
         </div>
     </div>
-    <section>
-        <div class="trust text-center py-5">
-            <h3 class="mb-3">Trusted by 2000+ Customers</h3>
-            <p class="">In categories like Home, Commercial, and Hospitality</p>
-            <div class="categories-icons d-flex justify-content-center mt-4">
-                <div class="category mx-3">
-                    <i class="bi bi-house-door-fill fa-3x"></i>
-                    <p class="mt-2">Home</p>
-                </div>
-                <div class="category mx-3">
-                    <i class="bi bi-building fa-3x"></i>
-                    <p class="mt-2">Commercial</p>
-                </div>
-                <div class="category mx-3">
-                    <i class="bi bi-hospital fa-3x"></i>
-                    <p class="mt-2">Hospitality</p>
-                </div>
+
+
+    <!-- Modal -->
+    <div class="modal" id="pickupModal" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+        data-aos-offset="100">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Select Your Location</h5>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> <a href="#"
+                            data-number="971501308311">AL WARQA</a></li>
+                    <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> <a href="#"
+                            data-number="971503553479">MIRDIFF</a></li>
+                    <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> <a href="#"
+                            data-number="971501361449">NAD AL HAMMAR</a></li>
+                    <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> <a href="#"
+                            data-number="971588220113">ARJAN</a></li>
+                    <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> <a href="#"
+                            data-number="971501362540">AL QUSAIS</a></li>
+                    <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> <a href="#"
+                            data-number="971552334770">SHARJAH IND 6</a></li>
+                </ul>
             </div>
         </div>
+    </div>
 
-    </section>
 
-    <section class="services py-5" id="services">
-        <div class="container">
-            <h2 class="text-center mb-4">Our Services</h2>
-            <div class="scrolling-wrapper">
-                <div class="card">
-                    <img src="img/hero 1.webp" alt="">
-                    <div class="card-body">
-                        <h5>Laundry Service</h5>
-                        <p>Expert dry cleaning services to keep your clothes looking fresh and new.</p>
+    <section id="services">
+        <div class="container service-container" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+            data-aos-offset="100">
+            <h2 class="mb-4">Our Services</h2>
+            <div class="row service" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+                data-aos-offset="100">
+                <div class="col-6 col-sm-6 col-md-3 card-container mx-0" data-aos="fade-up" data-aos-duration="2000"
+                    data-aos-delay="500" data-aos-offset="100">
+                    <h5>Wash & Fold</h5>
+                    <div class="card m-0">
+                        <div class="card-body">
+                            <i class="fa-solid fa-tshirt"></i>
+                        </div>
                     </div>
                 </div>
-
-                <div class="card">
-                    <img src="img/hero123.jpg" alt="">
-                    <div class="card-body">
-                        <h5>Dry Cleaning Service</h5>
-                        <p>Expert dry cleaning services to keep your clothes looking fresh and new.</p>
+                <div class="col-6 col-sm-6 col-md-3 card-container mx-0" data-aos="fade-up" data-aos-duration="2000"
+                    data-aos-delay="500" data-aos-offset="100">
+                    <h5>Dry Cleaning</h5>
+                    <div class="card m-0">
+                        <div class="card-body">
+                            <i class="fa-solid fa-hands-bubbles"></i>
+                        </div>
                     </div>
                 </div>
-
-                <div class="card">
-                    <img src="img/hero 1.webp" alt="">
-                    <div class="card-body">
-                        <h5>Ironing Service</h5>
-                        <p>Expert dry cleaning services to keep your clothes looking fresh and new.</p>
+                <div class="col-6 col-sm-6 col-md-3 card-container mx-0" data-aos="fade-up" data-aos-duration="2000"
+                    data-aos-delay="500" data-aos-offset="100">
+                    <h5>Pet Laundry</h5>
+                    <div class="card m-0">
+                        <div class="card-body">
+                            <i class="fa-solid fa-paw"></i>
+                        </div>
                     </div>
                 </div>
-
-                <div class="card">
-                    <img src="img/hero123.jpg" alt="">
-                    <div class="card-body">
-                        <h5>Wash and Iron</h5>
-                        <p>Expert dry cleaning services to keep your clothes looking fresh and new.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="img/hero 1.webp" alt="">
-                    <div class="card-body">
-                        <h5>Alteration Service</h5>
-                        <p>Expert dry cleaning services to keep your clothes looking fresh and new.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="img/hero123.jpg" alt="">
-                    <div class="card-body">
-                        <h5>Dry Cleaning</h5>
-                        <p>Expert dry cleaning services to keep your clothes looking fresh and new.</p>
+                <div class="col-6 col-sm-6 col-md-3 card-container mx-0" data-aos="fade-up" data-aos-duration="2000"
+                    data-aos-delay="500" data-aos-offset="100">
+                    <h5>Stain Removal</h5>
+                    <div class="card m-0">
+                        <div class="card-body">
+                            <i class="fa-solid fa-sticky-note"></i>
+                        </div>
                     </div>
                 </div>
             </div>
             <button id="view-all" class="ms-3">View All</button>
+
         </div>
     </section>
-    <section style="margin-bottom: 90px;">
+
+    <section style="margin-top: 140px;" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+        data-aos-offset="100">
+        <div class="container section-3">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="img-container">
+                        <img src="img/hero img 3.jpg" class="img-one" alt="" data-aos="fade-up" data-aos-duration="2000"
+                            data-aos-delay="500" data-aos-offset="100">
+                        <img src="img/hero img 3.jpg" class="img-two" alt="" data-aos="fade-up" data-aos-duration="2000"
+                            data-aos-delay="500" data-aos-offset="100">
+                    </div>
+                </div>
+                <div class="col-md-5" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+                    data-aos-offset="100">
+                    <div class="text-container">
+                        <h1>Laundry Made Simple with Dependable Cleaners</h1>
+                        <p class="mb-5 text-secondary">We Handle the Dirty Work – From Pickup to Delivery, Enjoy Freshly
+                            Cleaned Clothes at Your
+                            Convenience.</p>
+                        <ul>
+                            <li><i class="fa-solid fa-weight-hanging"></i> Convenient Wash & Fold Service Priced by the
+                                Pound</li>
+                            <li><i class="fa-solid fa-truck"></i> Free Pickup & Delivery – Fast, Reliable, and
+                                Stress-Free</li>
+                            <li><i class="fa-solid fa-shirt"></i> Expert Dry Cleaning for Delicate Garments</li>
+                        </ul>
+                        <button id="Make-your-first-order" class="ms-3 mt-3" data-aos="fade-up" data-aos-duration="2000"
+                            data-aos-delay="500" data-aos-offset="100">Place Your First Order Today</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="trust-section py-5" style="margin-top: 140px;" data-aos="fade-up" data-aos-duration="2000"
+        data-aos-delay="500" data-aos-offset="100">
+        <div class="container text-center">
+            <h2 class="mb-4">Why Trust Us?</h2>
+            <div class="row">
+
+                <!-- Fast Delivery -->
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+                    data-aos-offset="100">
+                    <div class="trust-item">
+                        <i class="bi bi-truck"></i> <!-- Initially visible icon -->
+                        <div class="trust-text">
+                            <h5>Fast Delivery</h5>
+                            <p>We ensure quick delivery of your orders, right at your doorstep.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cash on Delivery -->
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+                    data-aos-offset="100">
+                    <div class="trust-item">
+                        <i class="bi bi-cash-coin"></i>
+                        <div class="trust-text">
+                            <h5>Cash on Delivery</h5>
+                            <p>Pay when you receive your products—no hassle, no worry.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car Payment/Online Payment -->
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+                    data-aos-offset="100">
+                    <div class="trust-item">
+                        <i class="bi bi-credit-card-fill"></i>
+                        <div class="trust-text">
+                            <h5>Online Payment</h5>
+                            <p>We offer flexible payment options, including car payment and online payment.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section style="margin-top: 110px;" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+        data-aos-offset="100">
         <div class="container">
             <div class="contact">
                 <h3>Call us for service</h3>
@@ -213,126 +274,195 @@
     </section>
 
 
-    <section style="margin-top: 140px;">
+    <section style="margin-top: 140px;" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+        data-aos-offset="100">
         <div class="container stepsList-heading">
-            <h3 class="text-center text-secondary" style="margin-bottom: 60px;">Experience the Ultimate in Hassle-Free &
+            <h3 class="text-center text-secondary" style="margin-bottom: 60px;" data-aos="fade-up"
+                data-aos-duration="2000" data-aos-delay="500" data-aos-offset="100">Experience the Ultimate in
+                Hassle-Free &
                 Quick Laundry Care</h3>
-            <div class="stepsList-container">
-                <ul id="stepsList">
-
-                    <div id="step1" class="step-content active">
-                        <li data-target="#step1">01 Book A Pickup</li>
-                        <img src="img/hero 1.webp" alt="Book A Pickup">
-                        <p>Description of booking a pickup.</p>
+            <div class="stepsList-container" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+                data-aos-offset="100">
+                <div class="steps-nav">
+                    <div class="step" data-step="1">
+                        <div class="step-number">01</div>
                     </div>
-
+                    <div class="step" data-step="2">
+                        <div class="step-number">02</div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">03</div>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div class="step-number">04</div>
+                    </div>
+                </div>
+                <div class="steps-content" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+                    data-aos-offset="100">
+                    <div id="step1" class="step-content">
+                        <img src="img/booking.jpg" alt="Book A Pickup">
+                        <p>(01) Booking a pickup.</p>
+                    </div>
                     <div id="step2" class="step-content">
-                        <li data-target="#step2">02 We Collect</li>
-                        <img src="img/hero 1.webp" alt="We Collect">
-                        <p>Description of collection process.</p>
+                        <img src="img/collection.jpg" alt="We Collect">
+                        <p>(02) Collection process.</p>
                     </div>
-
                     <div id="step3" class="step-content">
-                        <li data-target="#step3">03 Expert Processing</li>
-                        <img src="img/hero 1.webp" alt="Expert Processing">
-                        <p>Description of expert processing.</p>
+                        <img src="img/process.jpg" alt="Expert Processing">
+                        <p>(03) Expert processing.</p>
                     </div>
-
                     <div id="step4" class="step-content">
-                        <li data-target="#step4">04 We Deliver</li>
-                        <img src="img/hero 1.webp" alt="We Deliver">
-                        <p>Description of delivery process.</p>
+                        <img src="img/delivery.jpg" alt="We Deliver">
+                        <p>(04) Delivery process.</p>
                     </div>
-                </ul>
+                </div>
             </div>
 
         </div>
     </section>
-    <section>
-        <div class="about-us" style="margin-top: 120px;" id="about-us">
-            <div class="container">
-                <div class="heading">
-                    <h2>About us</h2>
-                </div>
-                <div class="wrapper">
-                    <div class="content">
-                        <!-- <h2>Outstanding laundry service</h2> -->
-                        <p>At Fast Laundry, we’re redefining laundry services with a blend of innovation and
-                            care. Established in [Year], our goal has always been to provide hassle-free and
-                            efficient laundry solutions tailored to meet the needs of our community. Starting as a
-                            small initiative, we have grown into a trusted name in [Location/Region], recognized for
-                            our commitment to quality and customer satisfaction.</p>
-                        <a href="https://wa.me/971559900160?text=I'm%20interested%20in%20joining%20your%20service!"
-                            class="btn" type="button">Join Us Today</a>
-                    </div>
-                    <div class="image">
-                        <img src="img/hero img 3.jpg" alt="">
-                    </div>
-                </div>
+    <section id="about-us" style="margin-top: 110px;" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+        data-aos-offset="100">
+        <div class="container">
+            <div class="heading">
+                <h2>About us</h2>
+            </div>
+            <div class="content" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500" data-aos-offset="100">
+                <h2>Outstanding laundry service</h2>
+                <p data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500" data-aos-offset="100"><span
+                        class="highlight">Fast Laundry</span> is committed to delivering <span
+                        class="highlight">best-in-class laundry services in
+                        Dubai</span>, with innovation, excellence, and attention. Since 2010, our brand has gained
+                    popularity in <span>Al Warqa, Al Qusais, Nad Al Hammar, Mirdiff</span>, and <span>Arjan</span> as a
+                    trusted laundry partner for delivering <span>timely, hassle-free laundry services</span>. We offer
+                    <span>ironing, dry cleaning, special clothing care</span>, and <span>washing services</span>, all
+                    customized to fit our customers’ needs.
+                </p>
+
+                <p data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500" data-aos-offset="100">Over the
+                    years, we've expanded to cater to a wide audience that now recognizes our <span>pioneering
+                        efforts and flawless on-time delivery, green practices</span>, and attention to detail. At Fast
+                    Laundry, customer satisfaction is our priority, and we ensure that every garment receives the utmost
+                    care.</p>
+
             </div>
         </div>
     </section>
 
+    <section id="pricing" style="margin-top: 140px;" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+        data-aos-offset="100">
+        <div class="container pricing-container">
+            <div class="row pricing">
+                <h2 class="mb-3 text-center">Our Pricing</h2>
+                <div class="col-6 col-sm-6 col-md-3 card-container mx-0" data-aos="fade-up" data-aos-duration="2000"
+                    data-aos-delay="500" data-aos-offset="100">
+                    <h5>Kandura</h5>
+                    <div class="card m-0">
+                        <img src="img/hero 1.webp" alt="">
+                        <div class="card-body">
+                            <div class="price-container">
+                                <label for="one">Dry Cleaning</label>
+                                <p id="one">7.00/10.000</p>
+                                <label for="two">Ironing</label>
+                                <p id="two">4.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="container testimonial-container">
-        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="testimonial-card">
-                        <img src="img/boy 1.jpg" alt="User 1">
-                        <p>"This is the first testimonial. It was a great experience!"</p>
-                        <h5>- User 1</h5>
+                <div class="col-6 col-sm-6 col-md-3 card-container mx-0" data-aos="fade-up" data-aos-duration="2000"
+                    data-aos-delay="500" data-aos-offset="100">
+                    <h5>Kandura</h5>
+                    <div class="card m-0">
+                        <img src="img/hero 1.webp" alt="">
+                        <div class="card-body">
+                            <div class="price-container">
+                                <label for="one">Dry Cleaning</label>
+                                <p id="one">7.00/10.000</p>
+                                <label for="two">Ironing</label>
+                                <p id="two">4.00</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="testimonial-card">
-                        <img src="img/boy 1.jpg" alt="User 2">
-                        <p>"This is the second testimonial. I highly recommend them!"</p>
-                        <h5>- User 2</h5>
+
+                <div class="col-6 col-sm-6 col-md-3 card-container mx-0" data-aos="fade-up" data-aos-duration="2000"
+                    data-aos-delay="500" data-aos-offset="100">
+                    <h5>Kandura</h5>
+                    <div class="card m-0">
+                        <img src="img/hero 1.webp" alt="">
+                        <div class="card-body">
+                            <div class="price-container">
+                                <label for="one">Dry Cleaning</label>
+                                <p id="one">7.00/10.000</p>
+                                <label for="two">Ironing</label>
+                                <p id="two">4.00</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="testimonial-card">
-                        <img src="img/boy 1.jpg" alt="User 3">
-                        <p>"This is the third testimonial. Fantastic service!"</p>
-                        <h5>- User 3</h5>
+
+                <div class="col-6 col-sm-6 col-md-3 card-container mx-0" data-aos="fade-up" data-aos-duration="2000"
+                    data-aos-delay="500" data-aos-offset="100">
+                    <h5>Kandura</h5>
+                    <div class="card m-0">
+                        <img src="img/hero 1.webp" alt="">
+                        <div class="card-body">
+                            <div class="price-container">
+                                <label for="one">Dry Cleaning</label>
+                                <p id="one">7.00/10.000</p>
+                                <label for="two">Ironing</label>
+                                <p id="two">4.00</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <button id="view-pricing" class="ms-3" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+                data-aos-offset="100">View Pricing</button>
         </div>
-    </div>
+    </section>
 
-    <section style="margin-top: 140px;">
+
+    <section style="margin-top: 140px;" id="contact-us" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+        data-aos-offset="100">
         <div class="container contact-form-container">
-            <h2 class="text-center">Contact Us</h2>
-            <p class="text-center text-secondary mb-5">We're excited to connect with you! Whether you have inquiries
+            <h2 class="text-center" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+                data-aos-offset="100">Contact Us</h2>
+            <p class="text-center text-secondary mb-5" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+                data-aos-offset="100">We're excited to connect with you! Whether you have inquiries
                 about
                 our laundry services, need assistance with a booking, or simply want to reach out, our team is ready to
                 help. Contact us using the information below:</p>
-            <div class="row">
+            <div class="row" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500" data-aos-offset="100">
                 <div class="col-md-6 contact-form" id="contact">
                     <h3 class="text-secondary mb-5 ms-4">Need Support?</h3>
                     <form id="contactForm">
                         <!-- <p>We're here to help! Contact us for a quote or assistance in joining our team.</p> -->
                         <label for="name">Full Name:</label><br>
-                        <input type="text" id="name" name="name" required><br><br>
+                        <input type="text" id="name" name="name" required data-aos="fade-up" data-aos-duration="2000"
+                            data-aos-delay="500" data-aos-offset="100"><br><br>
 
                         <label for="place">Place:</label><br>
-                        <input type="text" id="place" name="place" required><br><br>
+                        <input type="text" id="place" name="place" required data-aos="fade-up" data-aos-duration="2000"
+                            data-aos-delay="500" data-aos-offset="100"><br><br>
 
                         <label for="contact">Contact Number:</label><br>
-                        <input type="tel" id="contact" name="contact" required><br><br>
+                        <input type="tel" id="contact" name="contact" required data-aos="fade-up"
+                            data-aos-duration="2000" data-aos-delay="500" data-aos-offset="100"><br><br>
 
                         <label for="message">Message:</label><br>
-                        <textarea id="message" name="message" required></textarea><br><br>
+                        <textarea id="message" name="message" required data-aos="fade-up" data-aos-duration="2000"
+                            data-aos-delay="500" data-aos-offset="100"></textarea><br><br>
 
-                        <button type="submit">Submit</button>
+                        <button type="submit" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+                            data-aos-offset="100">Submit</button>
                     </form>
                 </div>
-                <div class="col-md-6 location" id="location">
+                <div class="col-md-6 location" id="location" data-aos="fade-up" data-aos-duration="2000"
+                    data-aos-delay="500" data-aos-offset="100">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31277.95492016229!2d76.00137963755424!3d11.498355726628983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba66c4c7455ba79%3A0xe22fc2e2882e0689!2sThamarassery%20Churam!5e0!3m2!1sen!2sin!4v1723915843623!5m2!1sen!2sin"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d3644.127069682616!2d55.38187434616727!3d25.195079693286054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d25.1981698!2d55.399900099999996!4m5!1s0x3e5f67e1d19e1057%3A0x7c3014cc513d8825!2s59VM%2BX9F%20-%20Nadd%20Al%20Hamar%20-%20Dubai%20-%20United%20Arab%20Emirates!3m2!1d25.1951182!2d55.383476099999996!5e0!3m2!1sen!2sin!4v1726720765265!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
@@ -341,20 +471,21 @@
 
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500" data-aos-offset="100">
         <div class="container" style="margin-top: 120px;">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500" data-aos-offset="100">
                     <h3>Location</h3>
-                    <p>Kallai Road,
-                        Railway Station:200mts,
-                        Calicut Airport: 28kms</p>
+                    <p data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500" data-aos-offset="100">Aster clinic in AL warqa
+                        Vlcc wellness in AL quasis
+                        Our own school in alwarqa
+                        Inspectorate in jebel Ali</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500" data-aos-offset="100">
                     <h3>Email</h3>
                     <p>Email:sample@gmail.com</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500" data-aos-offset="100">
                     <h3>WhatsApp</h3>
                     <p>+971 123 4567 890</p>
                     <p>+971 123 4567 890</p>
@@ -368,16 +499,15 @@
 
 
     <script src="script.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-        crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -1,25 +1,3 @@
-// document.addEventListener('DOMContentLoaded', () => {
-//     const toggler = document.querySelector('.navbar-toggler');
-//     const navItems = document.querySelector('.nav-items');
-//     const openIcon = document.querySelector('.open-icon');
-//     const closeIcon = document.querySelector('.close-icon');
-
-//     // Toggle the menu and icons
-//     toggler.addEventListener('click', () => {
-//         navItems.classList.toggle('show');
-//         openIcon.classList.toggle('d-none');
-//         closeIcon.classList.toggle('d-none');
-//     });
-
-//     // Close menu and reset icons when clicking outside
-//     document.addEventListener('click', (e) => {
-//         if (!toggler.contains(e.target) && !navItems.contains(e.target)) {
-//             navItems.classList.remove('show');
-//             openIcon.classList.remove('d-none');
-//             closeIcon.classList.add('d-none');
-//         }
-//     });
-// });
 document.addEventListener('DOMContentLoaded', () => {
     const toggler = document.querySelector('.navbar-toggler');
     const navItems = document.querySelector('.nav-items');
@@ -54,25 +32,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    const steps = document.querySelectorAll('#stepsList li');
-    const contents = document.querySelectorAll('.step-content');
+/*step-list*/
+document.addEventListener('DOMContentLoaded', function () {
+    const steps = document.querySelectorAll('.step');
+    const stepContents = document.querySelectorAll('.step-content');
 
-    // Initially show the first content
-    contents[0].classList.add('active');
+    // Function to handle step clicks
+    function handleStepClick(stepIndex) {
+        stepContents.forEach((content, index) => {
+            content.classList.toggle('active', index === stepIndex);
+        });
+    }
 
+    // Add click event listeners to steps
     steps.forEach((step, index) => {
         step.addEventListener('click', () => {
-            // Remove 'active' class from all content divs
-            contents.forEach(content => {
-                content.classList.remove('active');
-            });
-
-            // Add 'active' class to the selected content
-            contents[index].classList.add('active');
+            handleStepClick(index);
         });
     });
+
+    // Set the default active step for smaller screens
+    function setDefaultStep() {
+        if (window.innerWidth <= 768) {
+            handleStepClick(0); // Display the first step by default on small and medium screens
+        }
+    }
+
+    // Initialize the default step on page load and resize
+    window.addEventListener('resize', setDefaultStep);
+    setDefaultStep();
 });
+
+
 
 //scrolling-wrapper dotes
 let currentIndex = 0;
@@ -124,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('pickupModal');
     const pickupBtn = document.getElementById('openModal');
     const bookingBtn = document.querySelector('.booking-btn');
+    const makeFirstOrder = document.getElementById('Make-your-first-order');
     const closeModalBtn = document.getElementById('closeModal');
     const links = document.querySelectorAll('.list-group-item a');
 
@@ -135,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Open modal when clicking either button
     pickupBtn.addEventListener('click', openModal);
     bookingBtn.addEventListener('click', openModal);
+    makeFirstOrder.addEventListener('click', openModal);
 
     // Close modal when clicking the close button
     closeModalBtn.addEventListener('click', function () {
@@ -220,6 +213,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    const viewPricingButton = document.getElementById('view-pricing');
+
+    viewPricingButton.addEventListener('click', function () {
+        window.location.href = 'pricing.html'; // Redirect to pricing.html page
+    });
+});
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const backToHomeBtn = document.getElementById('back-to-home');
@@ -227,4 +228,11 @@ document.addEventListener('DOMContentLoaded', function () {
     backToHomeBtn.addEventListener('click', function () {
         window.location.href = 'index.html'; // Redirect to service.html page
     });
+});
+
+
+
+/**/ 
+document.addEventListener('DOMContentLoaded', () => {
+    AOS.init();
 });
