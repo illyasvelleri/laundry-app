@@ -189,7 +189,8 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     // Collect form data
     const name = document.getElementById('name').value;
     const place = document.getElementById('place').value;
-    const contact = document.getElementById('contact').value;
+    const contact = document.getElementById('contactNumber').value;
+    console.log(contact);
     const message = document.getElementById('message').value;
 
     // Format the message
@@ -232,7 +233,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-/**/ 
+
+
+const customers = document.querySelectorAll('.customer');
+let currentCustomerIndex = 0;
+let shuffleInterval = 3000; // Time between shuffles (in milliseconds)
+
+function showNextCustomer() {
+    // Hide the current customer
+    customers[currentCustomerIndex].classList.remove('visible');
+
+    // Move to the next customer (loop back to the start if at the end)
+    currentCustomerIndex = (currentCustomerIndex + 1) % customers.length;
+
+    // Show the next customer
+    customers[currentCustomerIndex].classList.add('visible');
+}
+
+// Initial display of the first customer
+customers[currentCustomerIndex].classList.add('visible');
+
+// Start the auto shuffle effect
+setInterval(showNextCustomer, shuffleInterval);
+
+/**/
 document.addEventListener('DOMContentLoaded', () => {
     AOS.init();
 });
