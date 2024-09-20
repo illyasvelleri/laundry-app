@@ -209,8 +209,7 @@ nav .container .navbar-toggler span i {
     width: 400px;
 }
 .hero p span{
-    color: var(--success-color);
-    font-weight: 600;
+    font-weight: 500;
 }
 .hero .service p{
     margin-right: 5px;
