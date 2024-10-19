@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Laundry</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        :root {
+            --primary-color: #0d6efd; /* Blue */
+            --secondary-color: #fff;  /* White */
+            --black-color: #000;      /* Black */
+            --gray-color: #ccc;       /* Gray for dots */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .hero {
+            position: relative;
+            height: 100dvh; /* Full viewport height */
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .active {
+            opacity: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay for contrast */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 600px;
+            color: var(--secondary-color);
+        }
+
+        .expert {
+            font-size: 0.9em;
+            margin: 0 0 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .brand-name {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            margin: 10px 0 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: var(--black-color);
+        }
+
+        .location-container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .scrolling-wrapper {
+            display: flex;
+            overflow-x: auto; /* Allow horizontal scrolling */
+            padding: 20px 0;
+            scrollbar-width: thin; /* For Firefox */
+            -ms-overflow-style: none; /* For Internet Explorer and Edge */
+        }
+
+        .scrolling-wrapper::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Opera */
+        }
+
+        .card {
+            background: var(--secondary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 0 10px;
+            width: 150px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card i {
+            font-size: 2em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .card h5 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .dots {
+            margin-top: 20px;
+        }
+
+        .dot {
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: var(--gray-color);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: var(--primary-color);
+        }
+
+        .schedule-button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .schedule-button:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: var(--black-color);
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="slide active" style="background-image: url('https://cdn.pixabay.com/photo/2015/02/13/19/22/iron-635619_1280.jpg');">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <p class="expert">Expert</p>
+                    <h1 class="brand-name">Fast Laundry</h1>
+                    <p class="tagline">Schedule a Pickup</p>
+                    <a href="#services" class="cta-button">Schedule Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('https://cdn.pixabay.com/photo/2015/02/13/19/22/iron-635619_1280.jpg');">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <p class="expert">Expert</p>
+                    <h1 class="brand-name">Pick and Drop</h1>
+                    <p class="tagline">Convenient and Hassle-Free!</p>
+                    <a href="#services" class="cta-button">Schedule Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('https://cdn.pixabay.com/photo/2015/02/13/19/22/iron-635619_1280.jpg');">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <p class="expert">Expert</p>
+                    <h1 class="brand-name">Expert Ironing</h1>
+                    <p class="tagline">Perfectly Pressed Every Time!</p>
+                    <a href="#services" class="cta-button">Schedule Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="location-container" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500" data-aos-offset="100">
+        <div class="scrolling-wrapper">
+            <div class="card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h5>AL WARQA</h5>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h5>MIRDIFF</h5>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h5>NAD AL HAMMAR</h5>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h5>ARJAN</h5>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h5>AL QUSAIS</h5>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h5>SHARJAH IND 6</h5>
+            </div>
+        </div>
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <button class="schedule-button">Schedule a Pickup</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(showNextSlide, 5000); // Change slide every 5 seconds
+
+        // Add functionality for the dots (optional)
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = index;
+                slides[currentSlide].classList.add('active');
+                updateDots();
+            });
+        });
+
+        function updateDots() {
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+    </script>
+</body>
+</html>

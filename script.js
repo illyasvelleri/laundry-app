@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const toggler = document.querySelector('.navbar-toggler');
     const navItems = document.querySelector('.nav-items');
@@ -29,6 +30,73 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
+const slideInterval = setInterval(nextSlide, 4000); // Change slide every 5 seconds
+
+function nextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length; // Move to the next slide, loop to the first
+    slides[currentSlide].classList.add('active');
+}
+
+// Optional: If you want to allow manual control (e.g., pause on hover), you can add event listeners
+document.querySelector('.hero').addEventListener('mouseenter', () => {
+    clearInterval(slideInterval); // Pause auto-slide when mouse enters
+});
+
+document.querySelector('.hero').addEventListener('mouseleave', () => {
+    setInterval(nextSlide, 5000); // Resume auto-slide when mouse leaves
+});
+
+
+
+let currentIndex = 0;
+const cards = document.querySelectorAll('.card');
+const dots = document.querySelectorAll('.dot');
+const scrollingWrapper = document.querySelector('.scrolling-wrapper');
+const cardWidth = cards[0].offsetWidth + 15; // Adjust for gap or margin
+
+function updateDots(index) {
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+}
+
+function scrollToCard(index) {
+    const offset = index * cardWidth;
+    scrollingWrapper.scrollTo({
+        left: offset,
+        behavior: 'smooth'
+    });
+    updateDots(index);
+}
+
+// Handle dot clicks
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentIndex = index;
+        scrollToCard(index);
+    });
+});
+
+// Sync dots with manual scroll
+scrollingWrapper.addEventListener('scroll', () => {
+    const scrollPosition = scrollingWrapper.scrollLeft;
+    currentIndex = Math.round(scrollPosition / cardWidth);
+    updateDots(currentIndex);
+});
+
+// Auto-scroll every 4 seconds and loop back to the first card after the last
+setInterval(() => {
+    if (currentIndex === cards.length - 1) {
+        currentIndex = 0; // Reset to first card when at the last
+    } else {
+        currentIndex += 1; // Move to the next card
+    }
+    scrollToCard(currentIndex);
+}, 4000); // Adjust interval as needed
 
 
 
@@ -65,46 +133,46 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-//scrolling-wrapper dotes
-let currentIndex = 0;
-const cards = document.querySelectorAll('.card');
-const dots = document.querySelectorAll('.dot');
-const scrollingWrapper = document.querySelector('.scrolling-wrapper');
-const cardWidth = cards[0].offsetWidth + 10; // Adjust for margin
+// scrolling-wrapper dotes
+// let currentIndex = 0;
+// const cards = document.querySelectorAll('.card');
+// const dots = document.querySelectorAll('.dot');
+// const scrollingWrapper = document.querySelector('.scrolling-wrapper');
+// const cardWidth = cards[0].offsetWidth + 10; // Adjust for margin
 
-function updateDots(index) {
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[index].classList.add('active');
-}
+// function updateDots(index) {
+//     dots.forEach(dot => dot.classList.remove('active'));
+//     dots[index].classList.add('active');
+// }
 
-function scrollToCard(index) {
-    const offset = index * cardWidth;
-    scrollingWrapper.scrollTo({
-        left: offset,
-        behavior: 'smooth'
-    });
-    updateDots(index);
-}
+// function scrollToCard(index) {
+//     const offset = index * cardWidth;
+//     scrollingWrapper.scrollTo({
+//         left: offset,
+//         behavior: 'smooth'
+//     });
+//     updateDots(index);
+// }
 
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        currentIndex = index;
-        scrollToCard(index);
-    });
-});
+// dots.forEach((dot, index) => {
+//     dot.addEventListener('click', () => {
+//         currentIndex = index;
+//         scrollToCard(index);
+//     });
+// });
 
-// Update dots as the user scrolls manually
-scrollingWrapper.addEventListener('scroll', () => {
-    const scrollPosition = scrollingWrapper.scrollLeft;
-    currentIndex = Math.round(scrollPosition / cardWidth);
-    updateDots(currentIndex);
-});
+// // Update dots as the user scrolls manually
+// scrollingWrapper.addEventListener('scroll', () => {
+//     const scrollPosition = scrollingWrapper.scrollLeft;
+//     currentIndex = Math.round(scrollPosition / cardWidth);
+//     updateDots(currentIndex);
+// });
 
-// Auto scroll
-setInterval(() => {
-    currentIndex = (currentIndex + 1) % cards.length;
-    scrollToCard(currentIndex);
-}, 2000);
+// // Auto scroll
+// setInterval(() => {
+//     currentIndex = (currentIndex + 1) % cards.length;
+//     scrollToCard(currentIndex);
+// }, 2000);
 
 
 
@@ -114,6 +182,9 @@ setInterval(() => {
 document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('pickupModal');
     const pickupBtn = document.getElementById('openModal');
+    const scheduleOne = document.getElementById('scheduleOne');
+    const scheduleTwo = document.getElementById('scheduleTwo');
+    const scheduleThree = document.getElementById('scheduleThree');
     const bookingBtn = document.querySelector('.booking-btn');
     const makeFirstOrder = document.getElementById('Make-your-first-order');
     const closeModalBtn = document.getElementById('closeModal');
@@ -128,6 +199,9 @@ document.addEventListener('DOMContentLoaded', function () {
     pickupBtn.addEventListener('click', openModal);
     bookingBtn.addEventListener('click', openModal);
     makeFirstOrder.addEventListener('click', openModal);
+    scheduleOne.addEventListener('click',openModal);
+    scheduleTwo.addEventListener('click',openModal);
+    scheduleThree.addEventListener('click',openModal);
 
     // Close modal when clicking the close button
     closeModalBtn.addEventListener('click', function () {
@@ -260,3 +334,4 @@ setInterval(showNextCustomer, shuffleInterval);
 document.addEventListener('DOMContentLoaded', () => {
     AOS.init();
 });
+
